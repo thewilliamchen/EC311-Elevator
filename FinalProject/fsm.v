@@ -21,7 +21,7 @@
 
 //handles the logic for going to next floor/current floor
 module fsm(
-	input [5:0] in,
+	input [5:0] in,  //Leffen 5-0 Chillindude
 	input rst,
 	input clk, //yung 100MHz clock
 	output reg [1:0] floor = 1, //output
@@ -46,21 +46,21 @@ module fsm(
 		else begin
 			if(busy==1'b0) begin
 			case(in)
-				1 : begin dest_floor <= F1; busy <= 1'b1; end //001
-				2 : begin dest_floor <= F2; busy <= 1'b1; end //010
-				4 : begin dest_floor <= F3; busy <= 1'b1; end //100
-				8 : begin dest_floor <= F1; busy <= 1'b1; end //001
-				16 : begin dest_floor <= F2; busy <= 1'b1; end //010
-				32 : begin dest_floor <= F3; busy <= 1'b1; end //100
-				default : dest_floor <= dest_floor; //for now
+				1 : begin dest_floor <= F1; busy <= 1'b1; end //000001
+				2 : begin dest_floor <= F2; busy <= 1'b1; end //000010
+				4 : begin dest_floor <= F3; busy <= 1'b1; end //000100
+				8 : begin dest_floor <= F1; busy <= 1'b1; end //001000
+				16 : begin dest_floor <= F2; busy <= 1'b1; end //010000
+				32 : begin dest_floor <= F3; busy <= 1'b1; end //100000
+				default : dest_floor <= dest_floor; //catch all illegal configs
 			endcase
 			
 			end
 			
 			case(dest_floor) //decide our next floor
-			F1 : next_floor <= (floor==F2) ?  (F1): (floor==F3) ? (F2) : (F1); //if we're at F2, go to F1. elif F3 go to F2. else stay F1
+			F1 : next_floor <= (floor==F3) ?  (F2) : (F1); //if we're at F3, go to F2.  else go/stay F1
 			F2 : next_floor <= F2;
-			F3 : next_floor <= (floor==F2) ? (F3) : (floor==F1) ? (F2) : (F3); //if we're at F2, go to F3, else go to F2 first
+			F3 : next_floor <= (floor==F1) ? (F2) : (F3); //if we're at F2, go to F3, else go to F2 first
 			endcase
 		
 			case(next_floor) //find our direction

@@ -1,0 +1,614 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.21 secs
+ 
+--> Reading design: TopModule.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "TopModule.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "TopModule"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : TopModule
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\seven_alternate.v" into library work
+Parsing module <seven_alternate>.
+Analyzing Verilog file "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\bin2led7.v" into library work
+Parsing module <binary_to_segment>.
+WARNING:HDLCompiler:568 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\bin2led7.v" Line 41: Constant value is truncated to fit in <7> bits.
+Analyzing Verilog file "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\led_display.v" into library work
+Parsing module <LED_display>.
+Analyzing Verilog file "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\fsm.v" into library work
+Parsing module <fsm>.
+Analyzing Verilog file "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\clkdiv.v" into library work
+Parsing module <clkdiv>.
+Analyzing Verilog file "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.v" into library work
+Parsing module <TopModule>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <TopModule>.
+
+Elaborating module <clkdiv>.
+WARNING:HDLCompiler:1127 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.v" Line 35: Assignment to clk_1Hz ignored, since the identifier is never used
+
+Elaborating module <fsm>.
+WARNING:HDLCompiler:413 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\fsm.v" Line 61: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\fsm.v" Line 63: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\fsm.v" Line 67: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\fsm.v" Line 68: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\fsm.v" Line 69: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.v" Line 36: Assignment to busy ignored, since the identifier is never used
+
+Elaborating module <LED_display>.
+
+Elaborating module <seven_alternate>.
+
+Elaborating module <binary_to_segment>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <TopModule>.
+    Related source file is "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.v".
+INFO:Xst:3210 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.v" line 35: Output port <clk_1Hz> of the instance <clgsfat> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.v" line 36: Output port <busy> of the instance <f1> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <TopModule> synthesized.
+
+Synthesizing Unit <clkdiv>.
+    Related source file is "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\clkdiv.v".
+    Found 26-bit register for signal <counter2>.
+    Found 1-bit register for signal <clk_1kHz>.
+    Found 1-bit register for signal <clk_1Hz>.
+    Found 26-bit register for signal <counter1>.
+    Found 26-bit adder for signal <counter1[25]_GND_2_o_add_1_OUT> created at line 32.
+    Found 26-bit adder for signal <counter2[25]_GND_2_o_add_2_OUT> created at line 33.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  54 D-type flip-flop(s).
+Unit <clkdiv> synthesized.
+
+Synthesizing Unit <fsm>.
+    Related source file is "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\fsm.v".
+        F1 = 1
+        F2 = 2
+        F3 = 3
+        up = 1
+        down = 2
+        hold = 3
+    Found 2-bit register for signal <next_floor>.
+    Found 1-bit register for signal <busy>.
+    Found 2-bit register for signal <dir>.
+    Found 32-bit register for signal <counter>.
+    Found 2-bit register for signal <floor>.
+    Found 2-bit register for signal <dest_floor>.
+    Found 32-bit adder for signal <counter[31]_GND_3_o_add_30_OUT> created at line 74.
+    Found 4x64-bit Read Only RAM for signal <_n0121>
+    Found 2-bit 4-to-1 multiplexer for signal <next_floor[1]_GND_3_o_wide_mux_29_OUT> created at line 66.
+    Found 2-bit comparator greater for signal <GND_3_o_floor[1]_LessThan_22_o> created at line 67
+    Found 2-bit comparator greater for signal <PWR_3_o_floor[1]_LessThan_24_o> created at line 68
+    Found 2-bit comparator greater for signal <floor[1]_PWR_3_o_LessThan_25_o> created at line 68
+    Found 2-bit comparator greater for signal <floor[1]_PWR_3_o_LessThan_28_o> created at line 69
+    Found 2-bit comparator equal for signal <floor[1]_dest_floor[1]_equal_35_o> created at line 81
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred  41 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <fsm> synthesized.
+
+Synthesizing Unit <LED_display>.
+    Related source file is "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\led_display.v".
+    Summary:
+	no macro.
+Unit <LED_display> synthesized.
+
+Synthesizing Unit <seven_alternate>.
+    Related source file is "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\seven_alternate.v".
+    Found 4-bit register for signal <AN>.
+    Found 4-bit register for signal <small_bin>.
+    Found 1-bit register for signal <count>.
+    Found 1-bit adder for signal <count_PWR_5_o_add_1_OUT<0>> created at line 38.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <seven_alternate> synthesized.
+
+Synthesizing Unit <binary_to_segment>.
+    Related source file is "C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\bin2led7.v".
+    Summary:
+	no macro.
+Unit <binary_to_segment> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x64-bit single-port Read Only RAM                    : 1
+# Adders/Subtractors                                   : 4
+ 1-bit adder                                           : 1
+ 26-bit adder                                          : 2
+ 32-bit adder                                          : 1
+# Registers                                            : 13
+ 1-bit register                                        : 4
+ 2-bit register                                        : 4
+ 26-bit register                                       : 2
+ 32-bit register                                       : 1
+ 4-bit register                                        : 2
+# Comparators                                          : 5
+ 2-bit comparator equal                                : 1
+ 2-bit comparator greater                              : 4
+# Multiplexers                                         : 6
+ 2-bit 2-to-1 multiplexer                              : 3
+ 2-bit 4-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <count> in Unit <s1> is equivalent to the following FF/Latch, which will be removed : <AN_0> 
+INFO:Xst:2261 - The FF/Latch <AN_1> in Unit <s1> is equivalent to the following FF/Latch, which will be removed : <AN_2> 
+WARNING:Xst:1426 - The value init of the FF/Latch AN_1 hinder the constant cleaning in the block s1.
+   You should achieve better results by setting this init to 1.
+
+Synthesizing (advanced) Unit <clkdiv>.
+The following registers are absorbed into counter <counter2>: 1 register on signal <counter2>.
+The following registers are absorbed into counter <counter1>: 1 register on signal <counter1>.
+Unit <clkdiv> synthesized (advanced).
+
+Synthesizing (advanced) Unit <fsm>.
+The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0121> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 4-word x 64-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <floor>         |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <fsm> synthesized (advanced).
+
+Synthesizing (advanced) Unit <seven_alternate>.
+The following registers are absorbed into counter <count>: 1 register on signal <count>.
+Unit <seven_alternate> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 4x64-bit single-port distributed Read Only RAM        : 1
+# Adders/Subtractors                                   : 1
+ 1-bit adder                                           : 1
+# Counters                                             : 4
+ 1-bit up counter                                      : 1
+ 26-bit up counter                                     : 2
+ 32-bit up counter                                     : 1
+# Registers                                            : 19
+ Flip-Flops                                            : 19
+# Comparators                                          : 5
+ 2-bit comparator equal                                : 1
+ 2-bit comparator greater                              : 4
+# Multiplexers                                         : 6
+ 2-bit 2-to-1 multiplexer                              : 3
+ 2-bit 4-to-1 multiplexer                              : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch AN_2 hinder the constant cleaning in the block seven_alternate.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1426 - The value init of the FF/Latch AN_1 hinder the constant cleaning in the block seven_alternate.
+   You should achieve better results by setting this init to 1.
+INFO:Xst:2261 - The FF/Latch <AN_1> in Unit <seven_alternate> is equivalent to the following FF/Latch, which will be removed : <AN_2> 
+INFO:Xst:2261 - The FF/Latch <AN_0> in Unit <seven_alternate> is equivalent to the following FF/Latch, which will be removed : <count> 
+
+Optimizing unit <TopModule> ...
+
+Optimizing unit <fsm> ...
+
+Optimizing unit <clkdiv> ...
+
+Optimizing unit <seven_alternate> ...
+WARNING:Xst:2677 - Node <clgsfat/counter2_25> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_24> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_23> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_22> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_21> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_20> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_19> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_18> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_17> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_16> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_15> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_14> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_13> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_12> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_11> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_10> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_9> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_8> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_7> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_6> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_5> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_4> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_3> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_2> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_1> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/counter2_0> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:2677 - Node <clgsfat/clk_1Hz> of sequential type is unconnected in block <TopModule>.
+WARNING:Xst:1293 - FF/Latch <clgsfat/counter1_25> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_24> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_23> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_22> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_21> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_20> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_19> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_18> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_17> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clgsfat/counter1_16> has a constant value of 0 in block <TopModule>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 1.
+FlipFlop randall/s1/AN_1 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 66
+ Flip-Flops                                            : 66
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : TopModule.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 236
+#      GND                         : 1
+#      INV                         : 4
+#      LUT1                        : 46
+#      LUT2                        : 24
+#      LUT3                        : 1
+#      LUT4                        : 44
+#      LUT5                        : 5
+#      LUT6                        : 16
+#      MUXCY                       : 46
+#      VCC                         : 1
+#      XORCY                       : 48
+# FlipFlops/Latches                : 66
+#      FD                          : 58
+#      FDE                         : 6
+#      FDRE                        : 1
+#      FDSE                        : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 18
+#      IBUF                        : 7
+#      OBUF                        : 11
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              64  out of  18224     0%  
+ Number of Slice LUTs:                  140  out of   9112     1%  
+    Number used as Logic:               140  out of   9112     1%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    141
+   Number with an unused Flip Flop:      77  out of    141    54%  
+   Number with an unused LUT:             1  out of    141     0%  
+   Number of fully used LUT-FF pairs:    63  out of    141    44%  
+   Number of unique control sets:         6
+
+IO Utilization: 
+ Number of IOs:                          19
+ Number of bonded IOBs:                  19  out of    232     8%  
+    IOB Flip Flops/Latches:               2
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)       | Load  |
+-----------------------------------+-----------------------------+-------+
+clk                                | BUFGP                       | 58    |
+clgsfat/clk_1kHz                   | NONE(randall/s1/small_bin_3)| 8     |
+-----------------------------------+-----------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.078ns (Maximum Frequency: 245.197MHz)
+   Minimum input arrival time before clock: 5.685ns
+   Maximum output required time after clock: 4.821ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.078ns (frequency: 245.197MHz)
+  Total number of paths / destination ports: 2090 / 64
+-------------------------------------------------------------------------
+Delay:               4.078ns (Levels of Logic = 3)
+  Source:            f1/counter_12 (FF)
+  Destination:       f1/counter_31 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: f1/counter_12 to f1/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               3   0.447   1.015  f1/counter_12 (f1/counter_12)
+     LUT6:I0->O            3   0.203   0.898  f1/_n00951 (f1/_n00951)
+     LUT6:I2->O           16   0.203   1.005  f1/_n00957 (f1/_n0095)
+     LUT4:I3->O            1   0.205   0.000  f1/counter_31_rstpot (f1/counter_31_rstpot)
+     FD:D                      0.102          f1/counter_31
+    ----------------------------------------
+    Total                      4.078ns (1.160ns logic, 2.918ns route)
+                                       (28.4% logic, 71.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clgsfat/clk_1kHz'
+  Clock period: 2.106ns (frequency: 474.721MHz)
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Delay:               2.106ns (Levels of Logic = 1)
+  Source:            randall/s1/AN_0 (FF)
+  Destination:       randall/s1/AN_0 (FF)
+  Source Clock:      clgsfat/clk_1kHz rising
+  Destination Clock: clgsfat/clk_1kHz rising
+
+  Data Path: randall/s1/AN_0 to randall/s1/AN_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               7   0.447   0.773  randall/s1/AN_0 (randall/s1/AN_0)
+     INV:I->O              1   0.206   0.579  randall/s1/Result1_INV_0 (randall/s1/Result)
+     FD:D                      0.102          randall/s1/AN_0
+    ----------------------------------------
+    Total                      2.106ns (0.755ns logic, 1.352ns route)
+                                       (35.8% logic, 64.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 111 / 43
+-------------------------------------------------------------------------
+Offset:              5.685ns (Levels of Logic = 4)
+  Source:            reset (PAD)
+  Destination:       f1/counter_31 (FF)
+  Destination Clock: clk rising
+
+  Data Path: reset to f1/counter_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            40   1.222   1.750  reset_IBUF (reset_IBUF)
+     LUT5:I0->O            3   0.203   0.995  f1/_n00952 (f1/_n00952)
+     LUT6:I1->O           16   0.203   1.005  f1/_n00957 (f1/_n0095)
+     LUT4:I3->O            1   0.205   0.000  f1/counter_31_rstpot (f1/counter_31_rstpot)
+     FD:D                      0.102          f1/counter_31
+    ----------------------------------------
+    Total                      5.685ns (1.935ns logic, 3.750ns route)
+                                       (34.0% logic, 66.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clgsfat/clk_1kHz'
+  Total number of paths / destination ports: 32 / 11
+-------------------------------------------------------------------------
+Offset:              4.821ns (Levels of Logic = 2)
+  Source:            randall/s1/small_bin_1 (FF)
+  Destination:       NUM<6> (PAD)
+  Source Clock:      clgsfat/clk_1kHz rising
+
+  Data Path: randall/s1/small_bin_1 to NUM<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               7   0.447   1.021  randall/s1/small_bin_1 (randall/s1/small_bin_1)
+     LUT4:I0->O            1   0.203   0.579  randall/b1/seven<7>1 (NUM_0_OBUF)
+     OBUF:I->O                 2.571          NUM_0_OBUF (NUM<0>)
+    ----------------------------------------
+    Total                      4.821ns (3.221ns logic, 1.600ns route)
+                                       (66.8% logic, 33.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clgsfat/clk_1kHz
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+clgsfat/clk_1kHz|    2.106|         |         |         |
+clk             |    1.528|         |         |         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.078|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.89 secs
+ 
+--> 
+
+Total memory usage is 278360 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   48 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
+

@@ -50,11 +50,11 @@ module fsm_runner;
 
 		//#50 in = 4; //send us to the third floor
 		//#100 in = 0;
-		#50000 in = 4; //go 3F
+		#50000 in = 4; //go 3F via switch
 		#100000 in = 0;
-		#1500000000 in = 2; //go 2F
+		#1500000000 in = 16; //go 2F via button
 		#1500050000 in = 0;
-		#3000000000 in = 1;
+		#3000000000 in = 1; //go 1F via switch
 		
 		
 

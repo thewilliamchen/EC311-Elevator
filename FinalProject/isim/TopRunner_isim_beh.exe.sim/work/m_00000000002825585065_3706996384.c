@@ -25,7 +25,7 @@
 
 
 
-extern void work_m_00000000004019537247_3706996384_init()
+extern void work_m_00000000002825585065_3706996384_init()
 {
-	xsi_register_didat("work_m_00000000004019537247_3706996384", "isim/TopRunner_isim_beh.exe.sim/work/m_00000000004019537247_3706996384.didat");
+	xsi_register_didat("work_m_00000000002825585065_3706996384", "isim/TopRunner_isim_beh.exe.sim/work/m_00000000002825585065_3706996384.didat");
 }

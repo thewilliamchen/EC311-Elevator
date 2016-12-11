@@ -1,5 +1,4 @@
 
-# PlanAhead Generated physical constraints 
 
 NET "clk" LOC = V10;
 NET "reset" LOC = C4;
@@ -17,3 +16,9 @@ NET "AN[0]" LOC = P17;
 NET "in[2]" LOC = V9;
 NET "in[1]" LOC = T9;
 NET "in[0]" LOC = T10;
+
+# PlanAhead Generated physical constraints 
+
+NET "in[5]" LOC = A8;
+NET "in[4]" LOC = B8;
+NET "in[3]" LOC = C9;

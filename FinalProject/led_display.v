@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module LED_display(floor,dir, hex, AN, clk);
-	input[1:0] dir; //take in 2b binary
+	input[1:0] dir; //take in 2b binary. 01=up, 10=down, 11=hold
 	input[1:0] floor;
 	output[6:0] hex; //7 seg display
 	output[3:0] AN; //which 7seg to use

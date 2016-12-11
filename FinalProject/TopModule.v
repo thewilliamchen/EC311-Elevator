@@ -31,9 +31,12 @@ module TopModule(
 	 wire [1:0] floor;
 	 wire [1:0] dir;
 	 wire busy;
+	 wire [5:0] in2;
 	 
+	 debouncer d1(.clk(clk),.PB(in[2:0]),.PB_state(in2[2:0])); //switches
+	 debouncer d2(.clk(clk),.PB(in[5:3]),.PB_state(in2[5:3])); //buttons
 	 clkdiv clgsfat(.clk_100MHz(clk),.clk_1kHz(clk_1kHz),.clk_1Hz(clk_1Hz));
-	 fsm f1(.in(in),.rst(reset),.clk(clk),.floor(floor),.dir(dir),.busy(busy)); //run @ 100MHz. counter built in.
+	 fsm f1(.in(in2),.rst(reset),.clk(clk),.floor(floor),.dir(dir),.busy(busy)); //run @ 100MHz. counter built in.
 	 LED_display randall(.dir(dir),.floor(floor),.hex(NUM),.AN(AN),.clk(clk_1kHz)); //run @ 1kHz.
 
 

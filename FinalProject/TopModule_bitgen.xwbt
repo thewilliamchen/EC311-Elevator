@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.ncd
+OUTFILE=C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject\TopModule.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\wchen\Documents\GitHub\EC311-Elevator\FinalProject
+LICENSE=WebPack
+USER_INFO=__0_0_0
