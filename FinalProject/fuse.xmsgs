@@ -5,5 +5,11 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
+<msg type="warning" file="HDLCompiler" num="568" delta="unknown" >"C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/bin2led7.v" Line 41: Constant value is truncated to fit in &lt;<arg fmt="%d" index="1">7</arg>&gt; bits.
+</msg>
+
+<msg type="warning" file="Simulator" num="833" delta="unknown" >&quot;<arg fmt="%s" index="1">C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner.v</arg>&quot; Line <arg fmt="%d" index="2">56</arg>. Negative delay (<arg fmt="%f" index="3">-1294967296000.000000</arg>) treated as 0.
+</msg>
+
 </messages>
 

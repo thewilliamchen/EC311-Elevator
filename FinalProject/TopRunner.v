@@ -25,7 +25,7 @@
 module TopRunner;
 
 	// Inputs
-	reg [2:0] in;
+	reg [5:0] in;
 	reg clk;
 	reg reset;
 
@@ -47,10 +47,14 @@ module TopRunner;
 		in = 0;
 		clk = 0;
 		reset = 0;
-		#50000 in = 4; //send us to the third floor
 		
+		
+		#50000 in = 4; //go 3F
 		#100000 in = 0;
-
+		#1500000000 in = 2; //go 2F
+		#1500050000 in = 0;
+		#3000000000 in = 1;
+		
 
 	end
       

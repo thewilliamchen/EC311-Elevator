@@ -24,18 +24,20 @@
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="LEDdisplay_runner_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LEDdisplay_runner_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="TopRunner_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="TopRunner_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="TopRunner_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="clkdiv_runner_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="counter16b_runner_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="counter16b_runner_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="counter16b_runner_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="fsm_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="fsm_runner_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="fsm_runner_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="fsm_runner_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="fuse.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="isim"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_CMD" xil_pn:name="isim.cmd"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_LOG" xil_pn:name="isim.log"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="planAhead_run_1"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_INI" xil_pn:name="xilinxsim.ini"/>
   </files>
@@ -45,13 +47,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1481439049" xil_pn:in_ck="-425626338546233289" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1481439049">
+    <transform xil_pn:end_ts="1481443798" xil_pn:in_ck="-425626338546233289" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1481443798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="LEDdisplay_runner.v"/>
       <outfile xil_pn:name="TopModule.v"/>
       <outfile xil_pn:name="TopRunner.v"/>
@@ -65,11 +63,11 @@
       <outfile xil_pn:name="led_display.v"/>
       <outfile xil_pn:name="seven_alternate.v"/>
     </transform>
-    <transform xil_pn:end_ts="1481438683" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="6640328161522508310" xil_pn:start_ts="1481438683">
+    <transform xil_pn:end_ts="1481443664" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-2857054524989917436" xil_pn:start_ts="1481443664">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1481438683" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5082629548151282220" xil_pn:start_ts="1481438683">
+    <transform xil_pn:end_ts="1481443664" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2269986549791893822" xil_pn:start_ts="1481443664">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -77,14 +75,9 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1481439049" xil_pn:in_ck="-425626338546233289" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1481439049">
+    <transform xil_pn:end_ts="1481443798" xil_pn:in_ck="-425626338546233289" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1481443798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="OutOfDateForOutputs"/>
-      <status xil_pn:value="InputChanged"/>
-      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="LEDdisplay_runner.v"/>
       <outfile xil_pn:name="TopModule.v"/>
       <outfile xil_pn:name="TopRunner.v"/>
@@ -98,26 +91,29 @@
       <outfile xil_pn:name="led_display.v"/>
       <outfile xil_pn:name="seven_alternate.v"/>
     </transform>
-    <transform xil_pn:end_ts="1481439051" xil_pn:in_ck="-425626338546233289" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="2573242322408669515" xil_pn:start_ts="1481439049">
+    <transform xil_pn:end_ts="1481443800" xil_pn:in_ck="-425626338546233289" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="6561142343413339847" xil_pn:start_ts="1481443798">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <status xil_pn:value="OutOfDateForInputs"/>
-      <status xil_pn:value="OutOfDateForPredecessor"/>
-      <status xil_pn:value="InputChanged"/>
-      <outfile xil_pn:name="fsm_runner_beh.prj"/>
-      <outfile xil_pn:name="fsm_runner_isim_beh.exe"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
+      <outfile xil_pn:name="TopRunner_beh.prj"/>
+      <outfile xil_pn:name="TopRunner_isim_beh.exe"/>
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
+      <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1481439052" xil_pn:in_ck="8155029247640939784" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-7928969350823058939" xil_pn:start_ts="1481439051">
+    <transform xil_pn:end_ts="1481443800" xil_pn:in_ck="6517956534163994327" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-8840412916658947103" xil_pn:start_ts="1481443800">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fsm_runner_isim_beh.wdb"/>
+      <outfile xil_pn:name="TopRunner_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
+      <outfile xil_pn:name="isim.log"/>
     </transform>
     <transform xil_pn:end_ts="1481436302" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1481436302">
       <status xil_pn:value="SuccessfullyRun"/>

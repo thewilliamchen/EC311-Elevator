@@ -21,10 +21,11 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/wchen/Desktop/FinalProject/fsm_runner.v";
+static const char *ng0 = "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/fsm_runner.v";
 static int ng1[] = {0, 0};
 static int ng2[] = {4, 0};
 static int ng3[] = {2, 0};
+static int ng4[] = {1, 0};
 
 
 
@@ -78,7 +79,7 @@ LAB6:    xsi_set_current_line(54, ng0);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 3);
     xsi_set_current_line(55, ng0);
     t2 = (t0 + 2816);
-    xsi_process_wait(t2, 1000000000000LL);
+    xsi_process_wait(t2, 1500000000000LL);
     *((char **)t1) = &&LAB7;
     goto LAB1;
 
@@ -86,11 +87,31 @@ LAB7:    xsi_set_current_line(55, ng0);
     t3 = ((char*)((ng3)));
     t4 = (t0 + 1768);
     xsi_vlogvar_assign_value(t4, t3, 0, 0, 3);
+    xsi_set_current_line(56, ng0);
+    t2 = (t0 + 2816);
+    xsi_process_wait(t2, 1500050000000LL);
+    *((char **)t1) = &&LAB8;
+    goto LAB1;
+
+LAB8:    xsi_set_current_line(56, ng0);
+    t3 = ((char*)((ng1)));
+    t4 = (t0 + 1768);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 3);
+    xsi_set_current_line(57, ng0);
+    t2 = (t0 + 2816);
+    xsi_process_wait(t2, 0LL);
+    *((char **)t1) = &&LAB9;
+    goto LAB1;
+
+LAB9:    xsi_set_current_line(57, ng0);
+    t3 = ((char*)((ng4)));
+    t4 = (t0 + 1768);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 3);
     goto LAB1;
 
 }
 
-static void Always_61_1(char *t0)
+static void Always_62_1(char *t0)
 {
     char t3[8];
     char *t1;
@@ -124,15 +145,15 @@ LAB0:    t1 = (t0 + 3256U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(61, ng0);
+LAB2:    xsi_set_current_line(62, ng0);
 
-LAB4:    xsi_set_current_line(62, ng0);
+LAB4:    xsi_set_current_line(63, ng0);
     t2 = (t0 + 3064);
     xsi_process_wait(t2, 5000LL);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    xsi_set_current_line(62, ng0);
+LAB5:    xsi_set_current_line(63, ng0);
     t4 = (t0 + 2088);
     t5 = (t4 + 56U);
     t6 = *((char **)t5);
@@ -186,7 +207,7 @@ LAB11:    t18 = *((unsigned int *)t3);
 
 extern void work_m_00000000002970102434_3564051783_init()
 {
-	static char *pe[] = {(void *)Initial_45_0,(void *)Always_61_1};
+	static char *pe[] = {(void *)Initial_45_0,(void *)Always_62_1};
 	xsi_register_didat("work_m_00000000002970102434_3564051783", "isim/fsm_runner_isim_beh.exe.sim/work/m_00000000002970102434_3564051783.didat");
 	xsi_register_executes(pe);
 }

@@ -19,7 +19,7 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module TopModule(
-    input [2:0] in,
+    input [5:0] in,
     input clk,
 	 input reset,
     output [6:0] NUM,
@@ -33,8 +33,8 @@ module TopModule(
 	 wire busy;
 	 
 	 clkdiv clgsfat(.clk_100MHz(clk),.clk_1kHz(clk_1kHz),.clk_1Hz(clk_1Hz));
-	 fsm f1(.in(in),.rst(reset),.clk(clk),.floor(floor),.dir(dir),.busy(busy));
-	 LED_display randall(.dir(dir),.floor(floor),.hex(NUM),.AN(AN),.clk(clk));
+	 fsm f1(.in(in),.rst(reset),.clk(clk),.floor(floor),.dir(dir),.busy(busy)); //run @ 100MHz. counter built in.
+	 LED_display randall(.dir(dir),.floor(floor),.hex(NUM),.AN(AN),.clk(clk_1kHz)); //run @ 1kHz.
 
 
 endmodule

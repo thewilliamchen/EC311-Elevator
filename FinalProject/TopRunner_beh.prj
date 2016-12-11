@@ -1,0 +1,8 @@
+verilog work "seven_alternate.v"
+verilog work "bin2led7.v"
+verilog work "led_display.v"
+verilog work "fsm.v"
+verilog work "clkdiv.v"
+verilog work "TopModule.v"
+verilog work "TopRunner.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

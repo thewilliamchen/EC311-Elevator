@@ -21,7 +21,7 @@
 
 //handles the logic for going to next floor/current floor
 module fsm(
-	input [2:0] in,
+	input [5:0] in,
 	input rst,
 	input clk, //yung 100MHz clock
 	output reg [1:0] floor = 1, //output
@@ -46,9 +46,12 @@ module fsm(
 		else begin
 			if(busy==1'b0) begin
 			case(in)
-				1 : begin dest_floor <= F1; busy <= 1'b1; end
-				2 : begin dest_floor <= F2; busy <= 1'b1; end
-				4 : begin dest_floor <= F3; busy <= 1'b1; end
+				1 : begin dest_floor <= F1; busy <= 1'b1; end //001
+				2 : begin dest_floor <= F2; busy <= 1'b1; end //010
+				4 : begin dest_floor <= F3; busy <= 1'b1; end //100
+				8 : begin dest_floor <= F1; busy <= 1'b1; end //001
+				16 : begin dest_floor <= F2; busy <= 1'b1; end //010
+				32 : begin dest_floor <= F3; busy <= 1'b1; end //100
 				default : dest_floor <= dest_floor; //for now
 			endcase
 			

@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/wchen/Desktop/FinalProject/fsm_runner_isim_beh.exe" -prj "C:/Users/wchen/Desktop/FinalProject/fsm_runner_beh.prj" "work.fsm_runner" "work.glbl" 
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner_isim_beh.exe" -prj "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner_beh.prj" "work.TopRunner" "work.glbl" 

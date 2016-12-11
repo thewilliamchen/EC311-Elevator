@@ -25,10 +25,10 @@ module LED_display(floor,dir, hex, AN, clk);
 	output[3:0] AN; //which 7seg to use
 	input clk;
 	wire [3:0] small_bin;
-	wire clock_out;
+	//wire clock_out;
 	
-	clkdiv c1 (.clk_100MHz(clk), .clk_1kHz(clock_out));
-	seven_alternate s1 (floor, dir, small_bin, AN, clock_out);
+	//clkdiv c1 (.clk_100MHz(clk), .clk_1kHz(clock_out));
+	seven_alternate s1 (floor, dir, small_bin, AN, clk);
 	binary_to_segment b1 (small_bin, hex);
 	
 endmodule
