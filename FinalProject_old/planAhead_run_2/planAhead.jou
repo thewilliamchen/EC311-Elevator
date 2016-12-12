@@ -1,0 +1,21 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sun Dec 11 04:55:48 2016
+# Process ID: 9836
+# Log file: C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/planAhead_run_2/planAhead.log
+# Journal file: C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin A8 [get_ports {in[5]}]
+endgroup
+startgroup
+set_property package_pin B8 [get_ports {in[4]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports {in[3]}]
+endgroup
+save_constraints

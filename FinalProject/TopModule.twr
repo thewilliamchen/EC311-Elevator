@@ -1,14 +1,14 @@
 --------------------------------------------------------------------------------
-Release 14.7 Trace  (nt64)
-Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Release 14.2 Trace  (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
+C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
 -n 3 -fastpaths -xml TopModule.twx TopModule.ncd -o TopModule.twr TopModule.pcf
 -ucf TopModule.ucf
 
 Design file:              TopModule.ncd
 Physical constraint file: TopModule.pcf
-Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.23 2013-10-13)
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.22 2012-07-09)
 Report level:             verbose report
 
 Environment Variable      Effect 
@@ -37,32 +37,46 @@ Setup/Hold to clock clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-in<0>       |    3.364(R)|      SLOW  |   -1.456(R)|      FAST  |clk_BUFGP         |   0.000|
-in<1>       |    3.155(R)|      SLOW  |   -1.342(R)|      FAST  |clk_BUFGP         |   0.000|
-in<2>       |    2.609(R)|      SLOW  |   -1.206(R)|      FAST  |clk_BUFGP         |   0.000|
-in<3>       |    3.190(R)|      SLOW  |   -1.495(R)|      FAST  |clk_BUFGP         |   0.000|
-in<4>       |    2.887(R)|      SLOW  |   -1.305(R)|      FAST  |clk_BUFGP         |   0.000|
-in<5>       |    2.782(R)|      SLOW  |   -1.441(R)|      FAST  |clk_BUFGP         |   0.000|
-reset       |    4.425(R)|      SLOW  |   -1.360(R)|      FAST  |clk_BUFGP         |   0.000|
+in<0>       |    1.448(R)|      SLOW  |   -0.928(R)|      FAST  |clk_BUFGP         |   0.000|
+in<1>       |    1.321(R)|      SLOW  |   -0.772(R)|      FAST  |clk_BUFGP         |   0.000|
+in<2>       |    1.303(R)|      SLOW  |   -0.739(R)|      FAST  |clk_BUFGP         |   0.000|
+in<3>       |    2.264(R)|      SLOW  |   -1.392(R)|      FAST  |clk_BUFGP         |   0.000|
+in<4>       |    2.989(R)|      SLOW  |   -1.868(R)|      FAST  |clk_BUFGP         |   0.000|
+in<5>       |    2.150(R)|      SLOW  |   -1.291(R)|      FAST  |clk_BUFGP         |   0.000|
+reset       |    3.234(R)|      SLOW  |   -1.517(R)|      FAST  |clk_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+busy        |         7.324(R)|      SLOW  |         3.828(R)|      FAST  |clk_BUFGP         |   0.000|
+in2<0>      |         9.773(R)|      SLOW  |         4.886(R)|      FAST  |clk_BUFGP         |   0.000|
+in2<1>      |         9.593(R)|      SLOW  |         4.371(R)|      FAST  |clk_BUFGP         |   0.000|
+in2<2>      |         8.674(R)|      SLOW  |         4.242(R)|      FAST  |clk_BUFGP         |   0.000|
+in2<3>      |         9.048(R)|      SLOW  |         4.349(R)|      FAST  |clk_BUFGP         |   0.000|
+in2<4>      |         9.518(R)|      SLOW  |         4.528(R)|      FAST  |clk_BUFGP         |   0.000|
+in2<5>      |         9.273(R)|      SLOW  |         4.388(R)|      FAST  |clk_BUFGP         |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.009|         |         |         |
+clk            |    4.878|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Sun Dec 11 05:05:03 2016 
+Analysis completed Mon Dec 12 02:50:25 2016 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 242 MB
+Peak Memory Usage: 221 MB
 
 
 

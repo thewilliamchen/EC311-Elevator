@@ -10,7 +10,7 @@
 /*  \___\/\___\                                                    */
 /***********************************************************************/
 
-/* This file is designed for use with ISim build 0x7708f090 */
+/* This file is designed for use with ISim build 0xa0883be4 */
 
 #define XSI_HIDE_SYMBOL_SPEC true
 #include "xsi.h"
@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/clkdiv.v";
+static const char *ng0 = "//ad/eng/users/c/h/chenwill/EC311/FinalProject/clkdiv.v";
 static unsigned int ng1[] = {1U, 0U};
 static int ng2[] = {49999, 0};
 static int ng3[] = {0, 0};

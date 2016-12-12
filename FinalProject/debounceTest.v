@@ -18,30 +18,40 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module debouncer(
-    input clk, //this is a 100MHz clock provided on FPGA pin V10
-    input [2:0] PB,  //this is the input to be debounced
-     output reg [2:0] PB_state  //this is the debounced switch
-);
-/*This module debounces the pushbutton PB.
- *It can be added to your project files and called as is:
- *DO NOT EDIT THIS MODULE. I think it works?
- */
+module debouncer(clk, trigger, PB_down);
+    input clk, trigger;
+    output PB_down;
+    //output PB_up;
+     reg PB_state;
+    
+    // First use two flip-flops to synchronize the PB signal the "clk" clock domain
+    reg PB_sync_0;  always @(posedge clk) PB_sync_0 <= ~trigger;  // invert PB to make PB_sync_0 active high
+    reg PB_sync_1;  always @(posedge clk) PB_sync_1 <= PB_sync_0;
 
-// Synchronize the switch input to the clock
-reg [2:0] PB_sync_0;
-always @(posedge clk) PB_sync_0 <= PB; 
-reg [2:0] PB_sync_1;
-always @(posedge clk) PB_sync_1 <= PB_sync_0;
+    // Next declare a 16-bits counter
+    reg [15:0] PB_cnt;
 
-// Debounce the switch
-reg [15:0] PB_cnt; //around 65535
-always @(posedge clk)
-if(PB_state==PB_sync_1) //reset ctr if output state is equal to sync1
-    PB_cnt <= 0;
-else
-begin
-    PB_cnt <= PB_cnt + 1'b1;  //count up to 65535
-    if(PB_cnt == 16'hffff) PB_state <= ~PB_state;  //if 65535, toggle
-end
+    // When the push-button is pushed or released, we increment the counter
+    // The counter has to be maxed out before we decide that the push-button state has changed
+
+    wire PB_idle = (PB_state==PB_sync_1);
+    wire PB_cnt_max = &PB_cnt;  // true when all bits of PB_cnt are 1's
+
+    always @(posedge clk)
+    if(PB_idle)
+         PB_cnt <= 0;  // nothing's going on
+    else
+    begin
+         PB_cnt <= PB_cnt + 16'd1;  // something's going on, increment the counter
+         if(PB_cnt_max) PB_state <= ~PB_state;  // if the counter is maxed out, PB changed!
+    end
+    
+    
+    assign PB_down = ~PB_idle & PB_cnt_max & ~PB_state;
+    //assign PB_up   = ~PB_idle & PB_cnt_max &  PB_state;
+    
+    //always @ (posedge PB_up)
+        //Y = Y + 1'b1;
+    //counter c(PB_down, Y);
+
 endmodule

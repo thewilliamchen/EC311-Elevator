@@ -1,0 +1,125 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:29:51 MDT 2013
+# Start of session at: Sun Dec 11 01:05:11 2016
+# Process ID: 10176
+# Log file: C:/Users/wchen/Desktop/FinalProject/planAhead_run_1/planAhead.log
+# Journal file: C:/Users/wchen/Desktop/FinalProject/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Device 21-36] Loading parts and site information from C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source C:/Users/wchen/Desktop/FinalProject/pa.fromHdl.tcl
+# create_project -name FinalProject -dir "C:/Users/wchen/Desktop/FinalProject/planAhead_run_1" -part xc6slx16csg324-3
+# set_param project.pinAheadLayout yes
+# set srcset [get_property srcset [current_run -impl]]
+# set_property target_constrs_file "TopModule.ucf" [current_fileset -constrset]
+Adding file 'C:/Users/wchen/Desktop/FinalProject/TopModule.ucf' to fileset 'constrs_1'
+# set hdlfile [add_files [list {seven_alternate.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {clkdiv.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {bin2led7.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {led_display.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {fsm.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set hdlfile [add_files [list {TopModule.v}]]
+# set_property file_type Verilog $hdlfile
+# set_property library work $hdlfile
+# set_property top TopModule $srcset
+# add_files [list {TopModule.ucf}] -fileset [get_property constrset [current_run]]
+# open_rtl_design -part xc6slx16csg324-3
+Using Verific elaboration
+Parsing VHDL file "C:/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/lib/synplify/synattr.vhd" into library synplify
+Analyzing Verilog file "C:/Users/wchen/Desktop/FinalProject/seven_alternate.v" into library work
+Analyzing Verilog file "C:/Users/wchen/Desktop/FinalProject/clkdiv.v" into library work
+Analyzing Verilog file "C:/Users/wchen/Desktop/FinalProject/bin2led7.v" into library work
+Analyzing Verilog file "C:/Users/wchen/Desktop/FinalProject/led_display.v" into library work
+Analyzing Verilog file "C:/Users/wchen/Desktop/FinalProject/fsm.v" into library work
+Analyzing Verilog file "C:/Users/wchen/Desktop/FinalProject/TopModule.v" into library work
+Loading clock regions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockRegion.xml
+Loading clock buffers from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx16/ClockBuffers.xml
+Loading package pin functions from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/spartan6lx/xc6slx16/csg324/Package.xml
+Loading io standards from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from C:/Xilinx/14.7/ISE_DS/PlanAhead/data\parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : C:/Xilinx/14.7/ISE_DS/PlanAhead/data\./parts/xilinx/spartan6/drc.xml
+Parsing UCF File [C:/Users/wchen/Desktop/FinalProject/TopModule.ucf]
+Finished Parsing UCF File [C:/Users/wchen/Desktop/FinalProject/TopModule.ucf]
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Phase 0 | Netlist Checksum: 856a050e
+open_rtl_design: Time (s): elapsed = 00:00:12 . Memory (MB): peak = 628.074 ; gain = 174.887
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin V10 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin C4 [get_ports reset]
+endgroup
+startgroup
+set_property package_pin T17 [get_ports {NUM[6]}]
+endgroup
+startgroup
+set_property package_pin T18 [get_ports {NUM[5]}]
+endgroup
+startgroup
+set_property package_pin U17 [get_ports {NUM[4]}]
+endgroup
+startgroup
+set_property package_pin U18 [get_ports {NUM[3]}]
+endgroup
+startgroup
+set_property package_pin M14 [get_ports {NUM[2]}]
+endgroup
+startgroup
+set_property package_pin N14 [get_ports {NUM[1]}]
+endgroup
+startgroup
+set_property package_pin L14 [get_ports {NUM[0]}]
+endgroup
+startgroup
+set_property package_pin N16 [get_ports {AN[3]}]
+endgroup
+startgroup
+set_property package_pin N15 [get_ports {AN[2]}]
+endgroup
+startgroup
+set_property package_pin P18 [get_ports {AN[1]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {AN[0]}]
+endgroup
+set_property package_pin "" [get_ports [list  {in[2]}]]
+startgroup
+set_property package_pin V9 [get_ports {in[2]}]
+endgroup
+startgroup
+set_property package_pin T9 [get_ports {in[1]}]
+endgroup
+save_constraints
+startgroup
+set_property package_pin T10 [get_ports {in[0]}]
+endgroup
+save_constraints
+exit
+ERROR: [PlanAhead 12-106] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+ (See C:/Users/wchen/Desktop/FinalProject\planAhead_pid10176.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Sun Dec 11 01:11:59 2016...
+INFO: [Common 17-83] Releasing license: PlanAhead

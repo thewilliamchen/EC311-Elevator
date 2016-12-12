@@ -25,7 +25,7 @@ module fsm(
 	input rst,
 	input clk, //yung 100MHz clock
 	output reg [1:0] floor = 1, //output
-	output reg [1:0] dir = 3, output reg busy = 0
+	output reg [1:0] dir = 3, output reg busy = 1'b0
     );
 	 
 	 parameter F1 = 1, F2=2, F3=3,up=1,down=2,hold=3;
@@ -33,17 +33,36 @@ module fsm(
 	 reg [1:0] dest_floor = 1;
 	 reg [1:0] next_floor = 1;
 	 reg [31:0]counter = 0;
-
+	reg reset = 0; //reset state
 	 always @ (posedge clk) begin //actually do the thing
 	 
 	 //ah think, we can have this run pretty quickly
 	 
 		if(rst) begin //bracket reset
+		
 		dest_floor <= F1;
 		next_floor <= F1;
+		reset <= 1'b1;
 		end
 		
+		if (reset) begin
+			counter <= counter + 1'd1;
+			dir <= down;
+			if(counter ==  200000000) begin //200000000 for 2s
+				floor <= next_floor; //set our state to next floor
+				counter <= 0;
+				reset<=0;
+				dir <= hold;
+			end
+			
+		end
+		
+		
 		else begin
+			if(floor == dest_floor) begin
+				busy <= 1'b0;
+			end
+		
 			if(busy==1'b0) begin
 			case(in)
 				1 : begin dest_floor <= F1; busy <= 1'b1; end //000001
@@ -52,11 +71,11 @@ module fsm(
 				8 : begin dest_floor <= F1; busy <= 1'b1; end //001000
 				16 : begin dest_floor <= F2; busy <= 1'b1; end //010000
 				32 : begin dest_floor <= F3; busy <= 1'b1; end //100000
-				default : dest_floor <= dest_floor; //catch all illegal configs
+				//default : dest_floor <= dest_floor; //catch all illegal configs
 			endcase
-			
 			end
 			
+			else begin //NEUER
 			case(dest_floor) //decide our next floor
 			F1 : next_floor <= (floor==F3) ?  (F2) : (F1); //if we're at F3, go to F2.  else go/stay F1
 			F2 : next_floor <= F2;
@@ -72,16 +91,13 @@ module fsm(
 		
 			//create an if statement here to @0.5Hz to allow floor to advance
 			counter <= counter + 1'd1;
-			if(counter ==  50000000) begin //200000000 for 2s
+			if(counter ==  200000000) begin //200000000 for 2s
 				floor <= next_floor; //set our state to next floor
 				counter <= 0;
 			end
-			
-		
-			if(floor == dest_floor) begin
-			busy <= 1'b0;
 			end
 		
+			
 		end
 	end
 endmodule

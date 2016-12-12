@@ -36,9 +36,9 @@ always @ (*)
 		//
 		//4:	 seven = 7'b1001100;
 		//5:	 seven = 7'b0100100;
-		4:	 seven = 7'b0001001; //up
-		8:	 seven = 7'b1000001; //down
-		12:	 seven = 7'b11111110; //neutral
+		8:	 seven = 7'b0001001; //down
+		4:	 seven = 7'b1000001; //up
+		12:	 seven = 7'b1111110; //neutral
 		//9:	 seven = 7'b0000100;
 		//10: seven = 7'b0001000;
 		//11: seven = 7'b1100000;

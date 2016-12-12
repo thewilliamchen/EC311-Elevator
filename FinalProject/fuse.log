@@ -1,19 +1,20 @@
-Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner_isim_beh.exe -prj C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner_beh.prj work.TopRunner work.glbl 
-ISim P.20131013 (signature 0x7708f090)
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o X:/EC311/FinalProject/TopRunner_isim_beh.exe -prj X:/EC311/FinalProject/TopRunner_beh.prj TopRunner work.glbl 
+ISim P.28xd (signature 0xa0883be4)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/seven_alternate.v" into library work
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/bin2led7.v" into library work
-WARNING:HDLCompiler:568 - "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/bin2led7.v" Line 41: Constant value is truncated to fit in <7> bits.
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/led_display.v" into library work
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/fsm.v" into library work
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/debounceTest.v" into library work
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/clkdiv.v" into library work
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopModule.v" into library work
-Analyzing Verilog file "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner.v" into library work
-Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Analyzing Verilog file "X:/EC311/FinalProject/seven_alternate.v" into library work
+Analyzing Verilog file "X:/EC311/FinalProject/bin2led7.v" into library work
+WARNING:HDLCompiler:568 - "X:/EC311/FinalProject/bin2led7.v" Line 41: Constant value is truncated to fit in <7> bits.
+Analyzing Verilog file "X:/EC311/FinalProject/led_display.v" into library work
+Analyzing Verilog file "X:/EC311/FinalProject/fsm.v" into library work
+Analyzing Verilog file "X:/EC311/FinalProject/debounceTest.v" into library work
+Analyzing Verilog file "X:/EC311/FinalProject/clkdiv.v" into library work
+Analyzing Verilog file "X:/EC311/FinalProject/TopModule.v" into library work
+Analyzing Verilog file "X:/EC311/FinalProject/TopRunner.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
+WARNING:HDLCompiler:1016 - "X:/EC311/FinalProject/TopRunner.v" Line 37: Port busy is not connected to this instance
 Completed static elaboration
 Compiling module debouncer
 Compiling module clkdiv
@@ -23,11 +24,10 @@ Compiling module binary_to_segment
 Compiling module LED_display
 Compiling module TopModule
 Compiling module TopRunner
-WARNING:Simulator:833 - "C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner.v" Line 56. Negative delay (-1294967296000.000000) treated as 0.
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
+Waiting for 1 sub-compilation(s) to finish...
 Compiled 9 Verilog Units
-Built simulation executable C:/Users/wchen/Documents/GitHub/EC311-Elevator/FinalProject/TopRunner_isim_beh.exe
-Fuse Memory Usage: 27908 KB
-Fuse CPU Usage: 374 ms
+Built simulation executable X:/EC311/FinalProject/TopRunner_isim_beh.exe
+Fuse Memory Usage: 28564 KB
+Fuse CPU Usage: 592 ms
